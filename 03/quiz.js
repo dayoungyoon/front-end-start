@@ -17,11 +17,11 @@ var back = document.getElementById('back');
 
 var page = 1;
 var startIndex = 0;
-var viewPicture = 3;//페이지당 사진개수
-var endIndex = startIndex+viewPicture;
-var Totalpagecnt = Math.ceil((todayPhoto.length)/viewPicture);    //총 페이지 수
+var showCount = 3;//페이지당 사진개수
+var endIndex = startIndex+showCount;
+var totalPage = Math.ceil((todayPhoto.length)/showCount);    //총 페이지 수
 
-function showImageList(){
+function image(){
     var str = '';
     for(var i=startIndex; i<endIndex; i++){
         if(!todayPhoto[i]){
@@ -37,10 +37,10 @@ function showImageList(){
 
 front.addEventListener('click', function(){
 
-  startIndex += viewPicture;
-  endIndex += viewPicture;
+  startIndex += showCount;
+  endIndex += showCount;
 
-  if(page>=Totalpagecnt){
+  if(page>=totalPage){
     page=1;
     startIndex = 0;
     endIndex = 3;
@@ -48,25 +48,25 @@ front.addEventListener('click', function(){
   else{
     page++;
   }
-  showImageList();
+  image();
 });
 
 back.addEventListener('click', function(){
   
 
-  startIndex -= viewPicture;
-  endIndex -= viewPicture;
+  startIndex -= showCount;
+  endIndex -= showCount;
 
   if(page==1){
-    page=Totalpagecnt;
-    startIndex = viewPicture * page - viewPicture;
-    endIndex = viewPicture * page;   
+    page=totalPage;
+    startIndex = showCount * page - showCount;
+    endIndex = showCount * page;   
   }
   else{
     page--;
   }
-  showImageList();
+  image();
 
 });
 
-showImageList();
+image();
