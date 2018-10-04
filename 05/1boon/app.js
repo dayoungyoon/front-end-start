@@ -1,33 +1,30 @@
 console.log('1boon');
 
-var url = 'https://1boon.kakao.com/ch/enter.json?page=1&pagesize=10';
-
-
+var count=1;
+var url = 'https://1boon.kakao.com/ch/enter.json?page='+count+'&pagesize=8';
+function makeUrl(count){
+ url='https://1boon.kakao.com/ch/enter.json?page='+count+'&pagesize=8';
+ return url;
+}
 getUrlData(url, print);
 
-  
+var image='';
 function print(json){
   console.log(json);
-  var str = '';
-  var image='';
+  
 
-  for(var i=0; i < json.data.length; i++){
-
-    var title = json.data[i].title;
-    var path =json.data[i].path; 
-    str += '<a href="https://1boon.kakao.com/'+path+'">' + title + '</a><br>';
-  }
+  
   for(var i=0;i<json.data.length;i++){
     var imagepath=json.data[i].coverImage;
-    image+='<img src="'+imagepath+'" alt="">'
+    var title = json.data[i].title;
+    var path =json.data[i].path; 
+    image+='<div class="box"><img class="img" src="'+imagepath+'" alt=""><a class="title" href="https://1boon.kakao.com/'+path+'">' + title + '</a></div>'
   }
 
-  document.getElementById('wrap').innerHTML = str;
   document.getElementById('dayoung').innerHTML=image;
-
+  count+=1;
+  console.log(url);
 }
-
-
 
 function getUrlData(url, callback) {
   fetch(url)
@@ -41,3 +38,14 @@ function getUrlData(url, callback) {
       console.log('Fetch Error :-S', err);
     });
 }
+var btn=document.querySelector('button');
+function morePage(){
+  
+  
+  count+=1;
+  var url=makeUrl(count);
+  getUrlData(url,print);
+  document.getElementById("dayoung").innerHTML='<button type="button" class="btn">더보기</button>';
+}
+
+btn.addEventListener("click",morePage);
