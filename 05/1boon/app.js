@@ -1,6 +1,7 @@
 console.log('1boon');
 
 var count=1;
+var number=600;
 var url = 'https://1boon.kakao.com/ch/enter.json?page='+count+'&pagesize=8';
 function makeUrl(count){
  url='https://1boon.kakao.com/ch/enter.json?page='+count+'&pagesize=8';
@@ -11,8 +12,6 @@ getUrlData(url, print);
 var image='';
 function print(json){
   console.log(json);
-  
-
   
   for(var i=0;i<json.data.length;i++){
     var imagepath=json.data[i].coverImage;
@@ -45,7 +44,10 @@ function morePage(){
   count+=1;
   var url=makeUrl(count);
   getUrlData(url,print);
-  document.getElementById("dayoung").innerHTML='<button type="button" class="btn">더보기</button>';
+  number+=500;
+  
+  btn.style.top=number+'px';
 }
+
 
 btn.addEventListener("click",morePage);
