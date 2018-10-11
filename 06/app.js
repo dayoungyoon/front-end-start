@@ -40,6 +40,15 @@ btn.addEventListener('click',btnEvent);
     
   }
 
+  var text=document.querySelector("p");
+  function backHome(){
+    document.getElementById("searchlist").innerHTML='';
+    document.querySelector(".wrapper").classList.add('notSearched');
+    document.querySelector("input").value='';
+
+  }
+  
+  
   
     
   function print(json){
@@ -56,6 +65,7 @@ btn.addEventListener('click',btnEvent);
       
     }
     dom.innerHTML=str;
+    text.addEventListener('click',backHome);
    
 
   }
