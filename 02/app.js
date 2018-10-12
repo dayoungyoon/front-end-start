@@ -29,3 +29,21 @@ console.log( 1 + 2 ) // 3
 console.log( "a" + "b" ) // "ab"
 console.log( 1 + "4") // "14"->오류처럼 인식될수있어서 같은 자료형끼리 하도록하는게 최선
 
+//1번 1부터 100까지 출력하는 프로그램을 작성
+for(var count=1;count<101;count++){
+    document.writeln(count);
+    console.log(count);
+}
+
+for(var count=0; count<100;count++){
+    if(count%2==1){
+        document.writeln(count);
+        console.log(count);
+    }
+}
+for(var count=2;count<10;count++){
+    for(var count1=1;count1<10;count1++){
+        document.writeln(count+"x"+count1+"="+count*count1);
+        console.log(count+"x"+count1+"="+count*count1);
+    }
+}

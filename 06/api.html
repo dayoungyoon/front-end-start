@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>open api</title>
+    <style>
+        input{
+            border: 1px solid rgb(27, 159, 199);
+            border-radius: 10px;
+            width: 70%;
+            height: 45px;
+            text-align: center;
+            text-decoration: none; 
+            padding:0px;
+        }
+        button{
+            width: 45px;
+            height: 45px;
+            background-color: white;
+            border: 1px solid rgb(27, 159, 199);
+            border-radius: 10px;
+        }
+        p{
+            font-size: 20px;
+            color:rgb(27, 159, 199);
+            
+        }
+        .wrapper{
+            width: 80%;
+            margin: auto;
+        }
+        .notSearched{
+            line-height: 500px;
+        }
+        .contents{
+            width: 80%;
+            margin: auto;
+            padding:10px;
+        }
+        #search{
+            text-align: center;
+        }
+        #search > * {
+            display:inline-block;
+        }
+        #btn{
+            width: 100%;
+            text-align: center;
+            visibility: hidden;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrapper notSearched">
+        <div id="search">
+            <p>open api</p>
+            <input  type="text" placeholder="검색어를 입력하세요">
+            <button>검색</button>
+        </div>
+        <div id="searchlist">
+
+        </div>
+
+        <button id="btn"type="button">더보기</button>
+
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
