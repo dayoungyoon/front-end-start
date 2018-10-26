@@ -15,7 +15,6 @@ function addTodo(event){
 
     var todo=input.value;
     inserTode(todo);
-    console.log(todo);
     input.value='';
     event.preventDefault();
 }
@@ -27,9 +26,7 @@ function inserTode(todo){
 }
 function deleteTodo(event){
     console.log(event.target.classList.value);
-    console.log(event);
     if(event.target.classList.value==='delete'){
-        console.log(event.target.parentNode);
         event.target.parentNode.remove();
     }
     
@@ -37,5 +34,4 @@ function deleteTodo(event){
 
 // input.addEventListener('click', addTodo);
 form.addEventListener('submit', addTodo);
-console.log(list.innerHTML);
 addEventListener('click',deleteTodo)
