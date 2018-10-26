@@ -40,6 +40,3 @@ $('.wrap').on('click', 'div', function(event){
   // console.log(event.target);
 
 })
-$(widow).scroll(function(event){
-    document.querySelector(".wrap").innerHTML="<button>top</button>"
-})
