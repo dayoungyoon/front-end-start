@@ -5,6 +5,7 @@ var input =document.getElementById('memo');
 var form =document.querySelector('.new-task');
 var list=document.getElementById('list');
 var html="";
+var id=1;
 
 
 function addTodo(event){

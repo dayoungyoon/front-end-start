@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .box{
+        width: 30px;
+        height: 30px;
+        background-image:url(bug.png);
+        margin: auto;
+        position: absolute;
+        top: 245px;
+        left:245px;
+        visibility: visible;
+    }
+    #wrapper{
+        margin: auto;
+        height: 700px;
+        width: 500px;
+        border: 1px solid black;
+        padding: 5px;
+    }
+    #header{
+        border:1px solid black;
+        
+    }
+    .content{
+        height: 600px;
+        width: 490px;
+        margin: auto;
+        position: relative;
+    }
+    .gameover{
+        position: relative;
+        height: 150px;
+        width:300px;
+        left: 95px;
+        top: 225px;
+        display: none;
+    }
+
+    
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <p><span>score:</span><span class="score">0</span></p>
+            <p><span>miss:</span><span class="miss">0</span></p>
+        </div>
+        <div class="content">
+            <img src="bug.png" class="box"alt="img">
+            <img src="gameover.PNG" alt="gameover"class='gameover'>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
